@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Resume</title>
+    <meta name="theme-color" content="#ffc91d"/>
+    <link href="static/style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
+</head>
+<body>
+<aside class="sidebar">
+    <div class="avatar">
+        <img src="static/img/avatar.jpg" title="tom"/>
+    </div>
+    <nav class="nav">
+        <a href="#info">HOME</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#contact">CONTACT ME</a>
+    </nav>
+</aside>
+<main>
+    <section id="info">
+        <div class="wrap">
+            <h2 class="title">ABOUT ME</h2>
+            <div class="row">
+                <div class="row">
+                    <p>Hello, my name is Wilson Yeung.  </p>
+                    <p>I'm currently enrolling in Algonquin college to complete my diploma. I am a multidisciplinary designer, photographer, product manager, and a leader. By being positive and energetic, I take upon challenges and accomplish the impossibles. </p>
+                </div>   
+            </div>
+        </div>
+    </section>
+    <section id="experience">
+        <div class="wrap">
+            <h2 class="title">EXPERIENCE</h2>
+            <div class="row">
+                <div class="">
+                    <ul class="timeline">
+                       <li><p>Graphic Design Intern / Carleton University</p>
+                            <p><g>September.2014 - April.2015</g></p></li>
+                        <li><p>Multimedia Designer (Contract ) / G2Studio China</p>
+                            <p><g>April.2015 - September.2015</g></p></li>
+                        <li><p>Lead UI/UX Designer / Bumpn App Ottawa</p>
+                            <p><g>September.2015 - January.2016</g></p></li>
+                        <li><p>Graphic Designer (Remote) / Peace Collective Toronto</p>
+                            <p><g>January.2016 - June.2016</g></p></li>
+                         <li><p>Design and Media Program Assistant / Algonquin College</p>
+                            <p><g>January.2017 - January.2018</g></p></li>
+                         <li><p>Lead Designer and Producct Manager / WeHome China</p>
+                            <p><g>January.2018 - October.2019</g></p></li>
+                         <li><p>APAC Design Supervisor / CrossInstall U.S.</p>
+                            <p><g>November.2019 - Present</g></p></li>
+                    </ul>
+                </div>
+                <div class="">
+                   <img src="static/img/hireme.png" alt="" width="460" height="345">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="wrap">
+            <h2 class="title">SKILLS</h2>
+            <div class="row">
+                <div class="col-l-4 center-fixed">
+                    <div class="skills-icon">
+                        <i class="fa fa-html5"></i>
+                    </div>
+                    <div class="skills-title">
+                        <h3>HTML 5</h3>
+                        <p>Familiar with HTML5 website architecture and development</p>
+                    </div>
+                </div>
+                <div class="col-l-4  center-fixed">
+                    <div class="skills-icon">
+                        <i class="fa fa-css3"></i>
+                    </div>
+                    <div class="skills-title">
+                        <h3>CSS3</h3>
+                        <p>Familiar with using CSS3 to write responsive websites, animations, etc</p>
+                    </div>
+                </div>
+                <div class="col-l-4 center-fixed">
+                    <div class="skills-icon">
+                        <i class="fa fa-code"></i>
+                    </div>
+                    <div class="skills-title">
+                        <h3>JavaScript</h3>
+                        <p>Can use js to make simple programs, interactions and special effects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <section id="works">
+        <div class="wrap">
+            <h2 class="title">WORK</h2>
+            <div class="row" id="experience_content">
+
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="wrap">
+            <h2 class="title"><i class="fa fa-address-card" aria-hidden="true"></i> CONTACT ME</h2>
+            <div class="row">
+                <div class="col-l-4">
+                    <p>Email: wilsonyeung829@gmail.com</p>
+                    <p>Website：<a href="https://wilsonyeung.wixsite.com/wilsonyeung-co">My Portfolio</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+</main>
+<div id="img_large_div" style="display: none; position: fixed; z-index: 9999; width: 100%;height: 100%; top: 0; left: 0;text-align: center; background-color: rgba(0,0,0,0.7)">
+
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $(function () {
+        //EXPERIENCE
+        var experience_data = [
+                {'img_src':'static/img/works/image1.jpg', 'content':'My app design'},{'img_src':'static/img/works/image2.jpg', 'content':'My website design'},{'img_src':'static/img/works/image3.jpg', 'content':'My app design 2'},{'img_src':'static/img/works/image4.jpg', 'content':'My branding design'},{'img_src':'static/img/works/image5.jpg', 'content':'My graphic design'},
+                {'img_src':'static/img/works/image6.jpg', 'content':'My graphic design2'},
+            ];
+        var experience_content = $("#experience_content");
+        experience_content.empty();
+        for(var i in experience_data){
+            var data = experience_data[i];
+            var content = '<div class="col-l-6">\n' +
+                '                    <div class="works-item">\n' +
+                '                        <img src="'+ data['img_src'] +'"/>\n' +
+                '                        <p>'+ data['content'] +'</p>\n' +
+                '                    </div>\n' +
+                '                </div>';
+            experience_content.append(content);
+        }
+
+        $("#works img").click(function () {
+            var img_src = $(this).attr('src');
+            var img_ele = '<img src="'+img_src+'" style="width: 60%;margin-left: auto;margin-right: auto;margin-top: 5%;">';
+            $("#img_large_div").html(img_ele);
+            $("#img_large_div").show();
+            $("#img_large_div  img, #img_large_div").click(function () {
+                $("#img_large_div").html("");
+                $("#img_large_div").hide();
+            });
+        });
+    })
+</script>
+</body>
+</html>
